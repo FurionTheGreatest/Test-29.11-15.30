@@ -32,14 +32,4 @@ public class EnemyHealth : MonoBehaviour
         OnEnemyDie?.Invoke();
         Pooler.Despawn(gameObject);
     }
-    
-    private void OnEnable()
-    {
-        Bullet.OnPlayerHit += LoseHealth;
-    }
-
-    private void OnDisable()
-    {
-        Bullet.OnPlayerHit -= LoseHealth;
-    }
 }
