@@ -1871,7 +1871,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741667389}
-  m_LocalRotation: {x: 0.27266014, y: 0.000000016554438, z: -0.000000004691494, w: 0.9621104}
+  m_LocalRotation: {x: 0.27266014, y: -0.00000001655444, z: 0.0000000046914943, w: 0.9621104}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2711,6 +2711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1654074694}
+  - component: {fileID: 1654074695}
   m_Layer: 0
   m_Name: '[UI]'
   m_TagString: Untagged
@@ -2734,6 +2735,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1654074695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654074693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a29db77de3c1ba47870084d9f78e790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loseScreen: {fileID: 908002845}
+  winScreen: {fileID: 689711057}
 --- !u!1 &1687258581
 GameObject:
   m_ObjectHideFlags: 0
