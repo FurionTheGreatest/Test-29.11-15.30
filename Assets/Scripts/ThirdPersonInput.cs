@@ -10,7 +10,7 @@ public class ThirdPersonInput : MonoBehaviour
     //public Button fireButton;
     private ThirdPersonUserControl _userControl;
 
-    private void Start()
+    private void OnEnable()
     {
         _userControl = GetComponent<ThirdPersonUserControl>();
     }
