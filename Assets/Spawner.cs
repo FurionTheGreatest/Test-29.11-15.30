@@ -16,8 +16,11 @@ public class Spawner : MonoBehaviour
     public int enemiesLeft;
 
     [SerializeField] private int _countToSpawn = 1;
+    private const int EnemiesCountToWon = 10;
 
     private CinemachineFreeLook _camera;
+
+    public static Action WonGame;
     private void Start()
     {
         _camera = FindObjectOfType<CinemachineFreeLook>();
@@ -26,6 +29,7 @@ public class Spawner : MonoBehaviour
     private void Update()
     {
         if(enemiesLeft != 0) return;
+        
         SpawnEnemy(_countToSpawn);
     }
 
@@ -42,11 +46,17 @@ public class Spawner : MonoBehaviour
         if (_countToSpawn % 2 == 0)
             _countToSpawn += 2;
         else _countToSpawn++;
+        
+        if(_countToSpawn > EnemiesCountToWon)
+            WonGame?.Invoke();
     }
     
     [ContextMenu("SpawnPlayer")]
     public void SpawnPlayer()
     {
+        //clear UI
+        FindObjectOfType<UIGameState>().HideScreens();
+        //hide all objects to pools
         Pooler.DespawnAllPools();
         //get player from pool
         var instance = Pooler.Spawn(playerPrefab, playerSpawn.position, Quaternion.identity);

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -8,6 +6,8 @@ public class Health : MonoBehaviour
     public float maxHealth = 100;
 
     public float currentHealth;
+
+    public static Action OnPlayerDeath;
     private void Start()
     {
         currentHealth = maxHealth;
@@ -38,6 +38,7 @@ public class Health : MonoBehaviour
     
     private void Die()
     {
+        OnPlayerDeath?.Invoke();
         Pooler.Despawn(gameObject);
     }
     
