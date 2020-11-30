@@ -214,7 +214,7 @@ MonoBehaviour:
   movementSpeed: 6
   horizontalInput: 0
   verticalInput: 0
-  turnSmoothTime: 0.1
+  turnSmoothTime: 0.2
 --- !u!143 &475994790419334512
 CharacterController:
   m_ObjectHideFlags: 0
@@ -245,8 +245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bed4541178e40be4cb4e9622338bf486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchSensitivityX: 2
-  touchSensitivityY: 2
+  touchSensitivityX: 1
+  touchSensitivityY: 1
   rotationJoystick: {fileID: 0}
 --- !u!114 &2687011893544826665
 MonoBehaviour:

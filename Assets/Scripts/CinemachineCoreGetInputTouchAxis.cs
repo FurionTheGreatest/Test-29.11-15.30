@@ -18,7 +18,7 @@ public class CinemachineCoreGetInputTouchAxis : MonoBehaviour {
         switch(axisName)
         {
             case "Mouse X":
-                if (Input.touchCount>0)
+                if (Input.touchSupported)
                 {
                     return rotationJoystick.Horizontal * touchSensitivityX;
                 }
@@ -28,7 +28,7 @@ public class CinemachineCoreGetInputTouchAxis : MonoBehaviour {
                 }
  
             case "Mouse Y":
-                if (Input.touchCount > 0)
+                if (Input.touchSupported)
                 {
                     return rotationJoystick.Vertical * touchSensitivityY;
                 }

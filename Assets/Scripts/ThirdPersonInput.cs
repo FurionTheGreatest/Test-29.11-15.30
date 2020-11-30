@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class ThirdPersonInput : MonoBehaviour
 {
     public FixedJoystick movementInput;
-    //public Button fireButton;
     private ThirdPersonUserControl _userControl;
 
     private void OnEnable()
