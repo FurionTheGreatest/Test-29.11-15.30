@@ -1492,6 +1492,8 @@ MonoBehaviour:
   enemyPrefab: {fileID: 797799897945209016, guid: 1d63a3f866caa7848b3139c85450f2d5, type: 3}
   enemiesLeft: 0
   _countToSpawn: 1
+  aidKitPrefab: {fileID: 8673577781020459215, guid: d8f6fefb88ba30b47bc23981aaef702c, type: 3}
+  kitSpawnRepeatRate: 30
 --- !u!1 &622878199
 GameObject:
   m_ObjectHideFlags: 0
@@ -3027,7 +3029,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514557374}
-  m_LocalRotation: {x: 0.25511476, y: -0.000000008318518, z: 0.0000000021948006, w: 0.96691084}
+  m_LocalRotation: {x: 0.25511476, y: 0.000000008318519, z: -0.000000002194801, w: 0.96691084}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3363,7 +3365,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: 0.24809127, y: -0.000000016668453, z: 0.0000000042687525, w: 0.9687367}
+  m_LocalRotation: {x: 0.24809127, y: 0.0000000033336907, z: -8.537505e-10, w: 0.9687367}
   m_LocalPosition: {x: 3.2, y: 5.491862, z: -13.886515}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

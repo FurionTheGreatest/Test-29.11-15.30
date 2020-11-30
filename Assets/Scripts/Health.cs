@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
         _isHealthChanged = false;
     }
 
-    public void LoseHealth(float amountToLose)
+    private void LoseHealth(float amountToLose)
     {
         if (currentHealth - amountToLose > 0)
         {
@@ -38,9 +38,13 @@ public class Health : MonoBehaviour
         }
     }
     
-    public void AddHealth(float amountToAdd)
+    private void AddHealth(float amountToAdd)
     {
-        currentHealth += amountToAdd <= maxHealth ? currentHealth += amountToAdd : currentHealth = maxHealth;
+        if (currentHealth + amountToAdd <= maxHealth)
+            currentHealth += amountToAdd;
+        else
+            currentHealth = maxHealth;
+        
         _isHealthChanged = true;
     }
 
@@ -59,10 +63,12 @@ public class Health : MonoBehaviour
     private void OnEnable()
     {
         Bullet.OnPlayerHit += LoseHealth;
+        AidKit.OnKitPickUp += AddHealth;
     }
 
     private void OnDisable()
     {
         Bullet.OnPlayerHit -= LoseHealth;
+        AidKit.OnKitPickUp -= AddHealth;
     }
 }

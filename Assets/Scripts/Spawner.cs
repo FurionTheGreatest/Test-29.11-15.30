@@ -10,12 +10,15 @@ public class Spawner : MonoBehaviour
     public GameObject playerPrefab;
     [Header("Enemy")]
     public Transform[] enemySpawns;
-
     public GameObject enemyPrefab;
 
     public int enemiesLeft;
-
     [SerializeField] private int _countToSpawn = 1;
+    [Header("AidKit")]
+    public GameObject aidKitPrefab;
+
+    public float kitSpawnRepeatRate = 30;
+
     private const int EnemiesCountToWon = 10;
 
     private CinemachineFreeLook _camera;
@@ -24,6 +27,7 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         _camera = FindObjectOfType<CinemachineFreeLook>();
+        InvokeRepeating(nameof(SpawnAidKit),kitSpawnRepeatRate, kitSpawnRepeatRate);
     }
 
     private void Update()
@@ -56,6 +60,7 @@ public class Spawner : MonoBehaviour
     [ContextMenu("SpawnPlayer")]
     public void SpawnPlayer()
     {
+        CancelInvoke(nameof(SpawnAidKit));
         //clear UI
         FindObjectOfType<UIGameState>().HideScreens();
         //hide all objects to pools
@@ -70,6 +75,17 @@ public class Spawner : MonoBehaviour
 
         _countToSpawn = 1;
         SpawnEnemy(_countToSpawn);
+        InvokeRepeating(nameof(SpawnAidKit),kitSpawnRepeatRate, kitSpawnRepeatRate);
+    }
+
+    public void SpawnAidKit()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            var randomSpawnPosition = Random.Range(0, enemySpawns.Length);
+            var kit = Pooler.Spawn(aidKitPrefab, enemySpawns[randomSpawnPosition].position, Quaternion.identity);
+        }
+        
     }
 
     private void ReduceEnemiesCount()
