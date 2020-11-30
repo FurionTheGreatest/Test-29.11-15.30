@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using Cinemachine;
 using TMPro;
 using UnityEngine;
 
@@ -19,7 +20,7 @@ public class DamagePopup : MonoBehaviour
 
     public void SetupPopupText(float amount)
     {
-        _cameraTransform = Camera.main.transform;
+        _cameraTransform = FindObjectOfType<CinemachineFreeLook>().transform;
 
         _textColor = _textMesh.color;
         _textMesh.text = amount.ToString(CultureInfo.CurrentCulture);
