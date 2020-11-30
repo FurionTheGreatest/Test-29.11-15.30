@@ -26,7 +26,6 @@
       <Path>Library</Path>
       <Path>Logs</Path>
       <Path>Temp</Path>
-      <Path>Test-29.11-15.30</Path>
       <Path>UserSettings</Path>
       <Path>obj</Path>
     </explicitExcludes>

@@ -4922,5 +4922,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 2
-  damage: 100
+  damage: 20
   ignorePlayer: 0
