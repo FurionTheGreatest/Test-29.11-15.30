@@ -38,7 +38,9 @@ public class Spawner : MonoBehaviour
         for (int i = 0; i < countToSpawn; i++)
         {
             var randomSpawnPosition = Random.Range(0, enemySpawns.Length);
-            Pooler.Spawn(enemyPrefab, enemySpawns[randomSpawnPosition].position, Quaternion.identity);
+            var enemy = Pooler.Spawn(enemyPrefab, enemySpawns[randomSpawnPosition].position, Quaternion.identity);
+            var enemyHealth = enemy.GetComponent<EnemyHealth>();
+            enemyHealth.currentHealth = enemyHealth.maxHealth;
         }
 
         enemiesLeft = countToSpawn;
@@ -65,6 +67,9 @@ public class Spawner : MonoBehaviour
         //follow 
         _camera.Follow = instance.transform;
         _camera.LookAt = instance.transform;
+
+        _countToSpawn = 1;
+        SpawnEnemy(_countToSpawn);
     }
 
     private void ReduceEnemiesCount()
